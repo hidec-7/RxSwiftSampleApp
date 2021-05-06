@@ -6,17 +6,22 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class TopControlView: UIView {
     
-    let tinderButton = createTopButton(imageName: "tinder")
-    let goodButton = createTopButton(imageName: "good")
-    let commentButton = createTopButton(imageName: "comment")
-    let profileButton = createTopButton(imageName: "people")
+    private let disposeBag = DisposeBag()
     
-    static private func createTopButton(imageName: String) -> UIButton {
+    let tinderButton = createTopButton(imageName: "tinder", unselectedImage: "tinder-un")
+    let goodButton = createTopButton(imageName: "good", unselectedImage: "good-un")
+    let commentButton = createTopButton(imageName: "comment", unselectedImage: "comment-un")
+    let peopleButton = createTopButton(imageName: "people", unselectedImage: "people-un")
+    
+    static private func createTopButton(imageName: String, unselectedImage: String) -> UIButton {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: imageName), for: .normal)
+        button.setImage(UIImage(named: imageName), for: .selected)
+        button.setImage(UIImage(named: unselectedImage), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
 //        button.setTitle("tap", for: .normal)
         
@@ -26,7 +31,12 @@ class TopControlView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let baseStackView = UIStackView(arrangedSubviews: [tinderButton, goodButton, commentButton, profileButton])
+        setupLayout()
+        setupBindings()
+    }
+    
+    private func setupLayout() {
+        let baseStackView = UIStackView(arrangedSubviews: [tinderButton, goodButton, commentButton, peopleButton])
         baseStackView.axis = .horizontal
         baseStackView.distribution = .fillEqually
         baseStackView.spacing = 43
@@ -39,6 +49,46 @@ class TopControlView: UIView {
          baseStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 40),
          baseStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -40)
         ].forEach{ $0.isActive = true }
+        
+        tinderButton.isSelected = true
+    }
+    
+    private func setupBindings() {
+        tinderButton.rx.tap
+            .subscribe { _ in
+                self.handleSelectedButton(selectedButton: self.tinderButton)
+            }
+            .disposed(by: disposeBag)
+        
+        goodButton.rx.tap
+            .subscribe { _ in
+                self.handleSelectedButton(selectedButton: self.goodButton)
+            }
+            .disposed(by: disposeBag)
+        
+        commentButton.rx.tap
+            .subscribe { _ in
+                self.handleSelectedButton(selectedButton: self.commentButton)
+            }
+            .disposed(by: disposeBag)
+        
+        peopleButton.rx.tap
+            .subscribe { _ in
+                self.handleSelectedButton(selectedButton: self.peopleButton)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func handleSelectedButton(selectedButton: UIButton) {
+        let buttons = [tinderButton, goodButton, commentButton, peopleButton]
+        
+        buttons.forEach { button in
+            if button == selectedButton {
+                button.isSelected = true
+            } else {
+                button.isSelected = false
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
