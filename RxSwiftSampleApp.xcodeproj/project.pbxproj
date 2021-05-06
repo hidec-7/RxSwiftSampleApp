@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,13 @@
 		5D04A120264385B1001386B2 /* RxSwiftSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A11F264385B1001386B2 /* RxSwiftSampleAppUITests.swift */; };
 		5D04A13026444180001386B2 /* BottomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A12F26444180001386B2 /* BottomControlView.swift */; };
 		5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A13126444E4B001386B2 /* UIImageExtension.swift */; };
+		5D04A135264456A0001386B2 /* TopControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A134264456A0001386B2 /* TopControlView.swift */; };
+		5D04A14626446CBF001386B2 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14326446CBF001386B2 /* RxSwift.xcframework */; };
+		5D04A14726446CBF001386B2 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14326446CBF001386B2 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D04A14826446CBF001386B2 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14426446CBF001386B2 /* RxCocoa.xcframework */; };
+		5D04A14926446CBF001386B2 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14426446CBF001386B2 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D04A14A26446CBF001386B2 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14526446CBF001386B2 /* RxRelay.xcframework */; };
+		5D04A14B26446CBF001386B2 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14526446CBF001386B2 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D04A14C26446CBF001386B2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D04A14B26446CBF001386B2 /* RxRelay.xcframework in Embed Frameworks */,
+				5D04A14726446CBF001386B2 /* RxSwift.xcframework in Embed Frameworks */,
+				5D04A14926446CBF001386B2 /* RxCocoa.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5D04A0FA264385AE001386B2 /* RxSwiftSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D04A0FD264385AE001386B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +74,14 @@
 		5D04A121264385B1001386B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D04A12F26444180001386B2 /* BottomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlView.swift; sourceTree = "<group>"; };
 		5D04A13126444E4B001386B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		5D04A134264456A0001386B2 /* TopControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopControlView.swift; sourceTree = "<group>"; };
+		5D04A13826446240001386B2 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		5D04A13D264463DF001386B2 /* RxCocoa */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxCocoa; path = Carthage/Checkouts/RxSwift/RxCocoa; sourceTree = "<group>"; };
+		5D04A13E264463DF001386B2 /* RxRelay */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxRelay; path = Carthage/Checkouts/RxSwift/RxRelay; sourceTree = "<group>"; };
+		5D04A13F264463DF001386B2 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = Carthage/Checkouts/RxSwift/RxSwift; sourceTree = "<group>"; };
+		5D04A14326446CBF001386B2 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		5D04A14426446CBF001386B2 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		5D04A14526446CBF001386B2 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D04A14A26446CBF001386B2 /* RxRelay.xcframework in Frameworks */,
+				5D04A14626446CBF001386B2 /* RxSwift.xcframework in Frameworks */,
+				5D04A14826446CBF001386B2 /* RxCocoa.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +119,7 @@
 				5D04A113264385B1001386B2 /* RxSwiftSampleAppTests */,
 				5D04A11E264385B1001386B2 /* RxSwiftSampleAppUITests */,
 				5D04A0FB264385AE001386B2 /* Products */,
+				5D04A13726446240001386B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5D04A12F26444180001386B2 /* BottomControlView.swift */,
+				5D04A134264456A0001386B2 /* TopControlView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +191,20 @@
 			path = Extesion;
 			sourceTree = "<group>";
 		};
+		5D04A13726446240001386B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D04A14426446CBF001386B2 /* RxCocoa.xcframework */,
+				5D04A14526446CBF001386B2 /* RxRelay.xcframework */,
+				5D04A14326446CBF001386B2 /* RxSwift.xcframework */,
+				5D04A13D264463DF001386B2 /* RxCocoa */,
+				5D04A13E264463DF001386B2 /* RxRelay */,
+				5D04A13F264463DF001386B2 /* RxSwift */,
+				5D04A13826446240001386B2 /* RxBlocking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +215,8 @@
 				5D04A0F6264385AE001386B2 /* Sources */,
 				5D04A0F7264385AE001386B2 /* Frameworks */,
 				5D04A0F8264385AE001386B2 /* Resources */,
+				5D04A13C26446255001386B2 /* Run Script */,
+				5D04A14C26446CBF001386B2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,11 +331,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D04A13C26446255001386B2 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D04A0F6264385AE001386B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D04A135264456A0001386B2 /* TopControlView.swift in Sources */,
 				5D04A102264385AE001386B2 /* HomeViewController.swift in Sources */,
 				5D04A0FE264385AE001386B2 /* AppDelegate.swift in Sources */,
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,
@@ -458,6 +532,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9R57QJP8SY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxSwiftSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,6 +555,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9R57QJP8SY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxSwiftSampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

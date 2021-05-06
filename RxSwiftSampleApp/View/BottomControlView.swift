@@ -9,16 +9,16 @@ import UIKit
 
 class BottomControlView: UIView {
     
-    let view1 = BottomButtonView(frame: .zero, width: 50, imageName: "ball")
-    let view2 = BottomButtonView(frame: .zero, width: 60, imageName: "dribble")
-    let view3 = BottomButtonView(frame: .zero, width: 50, imageName: "ground")
-    let view4 = BottomButtonView(frame: .zero, width: 60, imageName: "shoes")
-    let view5 = BottomButtonView(frame: .zero, width: 50, imageName: "stadium")
+    let ballView = BottomButtonView(frame: .zero, width: 50, imageName: "ball")
+    let dribbleView = BottomButtonView(frame: .zero, width: 60, imageName: "dribble")
+    let groundView = BottomButtonView(frame: .zero, width: 50, imageName: "ground")
+    let shoesView = BottomButtonView(frame: .zero, width: 60, imageName: "shoes")
+    let stadiumView = BottomButtonView(frame: .zero, width: 50, imageName: "stadium")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let baseStackView = UIStackView(arrangedSubviews: [view1, view2, view3, view4, view5])
+        let baseStackView = UIStackView(arrangedSubviews: [ballView, dribbleView, groundView, shoesView, stadiumView])
         baseStackView.axis = .horizontal
         baseStackView.distribution = .fillEqually
         baseStackView.spacing = 10
