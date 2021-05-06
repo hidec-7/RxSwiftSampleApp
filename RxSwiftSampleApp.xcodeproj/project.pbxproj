@@ -16,6 +16,7 @@
 		5D04A120264385B1001386B2 /* RxSwiftSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A11F264385B1001386B2 /* RxSwiftSampleAppUITests.swift */; };
 		5D04A13026444180001386B2 /* BottomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A12F26444180001386B2 /* BottomControlView.swift */; };
 		5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A13126444E4B001386B2 /* UIImageExtension.swift */; };
+		5D04A135264456A0001386B2 /* TopControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A134264456A0001386B2 /* TopControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5D04A121264385B1001386B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D04A12F26444180001386B2 /* BottomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlView.swift; sourceTree = "<group>"; };
 		5D04A13126444E4B001386B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		5D04A134264456A0001386B2 /* TopControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				5D04A12F26444180001386B2 /* BottomControlView.swift */,
+				5D04A134264456A0001386B2 /* TopControlView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D04A135264456A0001386B2 /* TopControlView.swift in Sources */,
 				5D04A102264385AE001386B2 /* HomeViewController.swift in Sources */,
 				5D04A0FE264385AE001386B2 /* AppDelegate.swift in Sources */,
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,

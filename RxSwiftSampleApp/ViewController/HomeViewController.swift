@@ -14,21 +14,20 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        let view1 = UIView()
-        view1.backgroundColor = .yellow
+        let topView = TopControlView()
         
         let view2 = UIView()
         view2.backgroundColor = .blue
         
         let BottomView = BottomControlView()
         
-        let stackView = UIStackView(arrangedSubviews: [view1, view2, BottomView])
+        let stackView = UIStackView(arrangedSubviews: [topView, view2, BottomView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         
         self.view.addSubview(stackView)
         
-        [view1.heightAnchor.constraint(equalToConstant: 100),
+        [topView.heightAnchor.constraint(equalToConstant: 100),
          BottomView.heightAnchor.constraint(equalToConstant: 120),
          
          stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
