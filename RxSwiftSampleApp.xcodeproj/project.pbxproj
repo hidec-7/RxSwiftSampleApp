@@ -15,6 +15,7 @@
 		5D04A115264385B1001386B2 /* RxSwiftSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A114264385B1001386B2 /* RxSwiftSampleAppTests.swift */; };
 		5D04A120264385B1001386B2 /* RxSwiftSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A11F264385B1001386B2 /* RxSwiftSampleAppUITests.swift */; };
 		5D04A13026444180001386B2 /* BottomControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A12F26444180001386B2 /* BottomControlView.swift */; };
+		5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A13126444E4B001386B2 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5D04A11F264385B1001386B2 /* RxSwiftSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftSampleAppUITests.swift; sourceTree = "<group>"; };
 		5D04A121264385B1001386B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D04A12F26444180001386B2 /* BottomControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlView.swift; sourceTree = "<group>"; };
+		5D04A13126444E4B001386B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		5D04A0FC264385AE001386B2 /* RxSwiftSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				5D04A13326444E52001386B2 /* Extesion */,
 				5D04A12E2644412A001386B2 /* View */,
 				5D04A12D26443FC7001386B2 /* ViewController */,
 				5D04A0FD264385AE001386B2 /* AppDelegate.swift */,
@@ -142,6 +145,14 @@
 				5D04A12F26444180001386B2 /* BottomControlView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5D04A13326444E52001386B2 /* Extesion */ = {
+			isa = PBXGroup;
+			children = (
+				5D04A13126444E4B001386B2 /* UIImageExtension.swift */,
+			);
+			path = Extesion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				5D04A102264385AE001386B2 /* HomeViewController.swift in Sources */,
 				5D04A0FE264385AE001386B2 /* AppDelegate.swift in Sources */,
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,
+				5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */,
 				5D04A13026444180001386B2 /* BottomControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

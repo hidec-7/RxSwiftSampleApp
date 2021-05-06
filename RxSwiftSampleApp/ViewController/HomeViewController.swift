@@ -21,12 +21,10 @@ class HomeViewController: UIViewController {
         view2.backgroundColor = .blue
         
         let BottomView = BottomControlView()
-        BottomView.backgroundColor = .green
         
         let stackView = UIStackView(arrangedSubviews: [view1, view2, BottomView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
         
         self.view.addSubview(stackView)
         
@@ -36,8 +34,8 @@ class HomeViewController: UIViewController {
          stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
          stackView.leftAnchor.constraint(equalTo: view.leftAnchor),
-         stackView.rightAnchor.constraint(equalTo: view.rightAnchor)]
-            .forEach{ $0 .isActive = true }
+         stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ].forEach{ $0 .isActive = true }
     }
 
 
