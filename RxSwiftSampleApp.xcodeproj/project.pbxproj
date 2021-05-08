@@ -28,6 +28,8 @@
 		5D04A15026468B14001386B2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A14F26468B14001386B2 /* CardView.swift */; };
 		5D04A1522646A041001386B2 /* UIColorExtesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1512646A041001386B2 /* UIColorExtesion.swift */; };
 		5D04A1542646A97D001386B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D04A1532646A97D001386B2 /* GoogleService-Info.plist */; };
+		5D04A1992646B51D001386B2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1982646B51D001386B2 /* RegisterViewController.swift */; };
+		5D04A19D2646B8B9001386B2 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A19C2646B8B9001386B2 /* RegisterTextField.swift */; };
 		9514897141BBEEBEB04FF2A0 /* Pods_RxSwiftSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FFD50823797FB86C69CD8C /* Pods_RxSwiftSampleAppTests.framework */; };
 		9E5081AD65BFDE6133332E50 /* Pods_RxSwiftSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B6C5FA7E032B98D20985A /* Pods_RxSwiftSampleApp.framework */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		5D04A1902646B03E001386B2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5D04A1912646B04B001386B2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		5D04A1922646B054001386B2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5D04A1982646B51D001386B2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5D04A19C2646B8B9001386B2 /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
 		65EC64A8562BEB8B21482098 /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		683A9FE4A501CE75408B215B /* Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests/Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AE6D41D7693D2EE538C1888C /* Pods-RxSwiftSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftSampleAppTests/Pods-RxSwiftSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				5D04A101264385AE001386B2 /* HomeViewController.swift */,
+				5D04A1982646B51D001386B2 /* RegisterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -223,9 +228,8 @@
 		5D04A12E2644412A001386B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5D04A12F26444180001386B2 /* BottomControlView.swift */,
-				5D04A134264456A0001386B2 /* TopControlView.swift */,
-				5D04A14F26468B14001386B2 /* CardView.swift */,
+				5D04A19B2646B89D001386B2 /* Register */,
+				5D04A19A2646B888001386B2 /* Home */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +282,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5D04A19A2646B888001386B2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5D04A12F26444180001386B2 /* BottomControlView.swift */,
+				5D04A134264456A0001386B2 /* TopControlView.swift */,
+				5D04A14F26468B14001386B2 /* CardView.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		5D04A19B2646B89D001386B2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5D04A19C2646B8B9001386B2 /* RegisterTextField.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		D94E5126182B278BE76A55D3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,7 +310,6 @@
 				AE6D41D7693D2EE538C1888C /* Pods-RxSwiftSampleAppTests.debug.xcconfig */,
 				0443DD78376ED06723725829 /* Pods-RxSwiftSampleAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -551,7 +572,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D04A135264456A0001386B2 /* TopControlView.swift in Sources */,
+				5D04A1992646B51D001386B2 /* RegisterViewController.swift in Sources */,
 				5D04A102264385AE001386B2 /* HomeViewController.swift in Sources */,
+				5D04A19D2646B8B9001386B2 /* RegisterTextField.swift in Sources */,
 				5D04A0FE264385AE001386B2 /* AppDelegate.swift in Sources */,
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,
 				5D04A14E26468211001386B2 /* UIViewExtension.swift in Sources */,
