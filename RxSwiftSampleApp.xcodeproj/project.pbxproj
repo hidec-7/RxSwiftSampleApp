@@ -24,6 +24,7 @@
 		5D04A14A26446CBF001386B2 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14526446CBF001386B2 /* RxRelay.xcframework */; };
 		5D04A14B26446CBF001386B2 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D04A14526446CBF001386B2 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D04A14E26468211001386B2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A14D26468211001386B2 /* UIViewExtension.swift */; };
+		5D04A15026468B14001386B2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A14F26468B14001386B2 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		5D04A14426446CBF001386B2 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		5D04A14526446CBF001386B2 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 		5D04A14D26468211001386B2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		5D04A14F26468B14001386B2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				5D04A12F26444180001386B2 /* BottomControlView.swift */,
 				5D04A134264456A0001386B2 /* TopControlView.swift */,
+				5D04A14F26468B14001386B2 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,
 				5D04A14E26468211001386B2 /* UIViewExtension.swift in Sources */,
 				5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */,
+				5D04A15026468B14001386B2 /* CardView.swift in Sources */,
 				5D04A13026444180001386B2 /* BottomControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
