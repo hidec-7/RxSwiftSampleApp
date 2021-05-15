@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class RegisterViewController: UIViewController {
+    
+    private let disposeBag = DisposeBag()
     
     private let titleLabel = RegisterTitleLabel()
     private let nameTextField = RegisterTextField(placeHolder: "name")
@@ -20,6 +23,7 @@ class RegisterViewController: UIViewController {
 
         setupGardientLayer()
         setupLayout()
+        setupBindins()
     }
     
     private func setupGardientLayer() {
@@ -45,5 +49,39 @@ class RegisterViewController: UIViewController {
         nameTextField.anchor(height: 45)
         baseStackView.anchor(left: view.leftAnchor, right: view.rightAnchor, centerY: view.centerYAnchor, leftPadding: 45, rightPadding: 45)
         titleLabel.anchor(bottom: baseStackView.topAnchor, centerX: view.centerXAnchor, bottomPadding: 20)
+    }
+    
+    private func setupBindins() {
+        nameTextField.rx.text
+            .asDriver()
+            .drive { [weak self] text in
+                // textの情報ハンドル
+            }
+            .disposed(by: disposeBag)
+     
+        emailTextField.rx.text
+            .asDriver()
+            .drive { [weak self] text in
+            // textの情報ハンドル
+            }
+        .disposed(by: disposeBag)
+
+        passwordTextField.rx.text
+            .asDriver()
+            .drive { [weak self] text in
+                // textの情報ハンドル
+            }
+            .disposed(by: disposeBag)
+        
+        registerButton.rx.tap
+            .asDriver()
+            .drive { _ in
+                //　登録時の処理
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func createUserToFireAuth() {
+        
     }
 }
