@@ -29,6 +29,11 @@
 		5D04A1A12646C05C001386B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D04A1A02646C05C001386B2 /* GoogleService-Info.plist */; };
 		5D04A1A32646C425001386B2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1A22646C425001386B2 /* RegisterViewController.swift */; };
 		5D04A1A72646C4C2001386B2 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1A62646C4C2001386B2 /* RegisterTextField.swift */; };
+		5D04A1A92646C74F001386B2 /* RegisterTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1A82646C74F001386B2 /* RegisterTitleLabel.swift */; };
+		5D04A1AB2648FA65001386B2 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1AA2648FA65001386B2 /* RegisterButton.swift */; };
+		5DE2C46A2650061900F382D7 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C4692650061900F382D7 /* UIButton.swift */; };
+		5DE2C46C2650072300F382D7 /* CardInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */; };
+		5DE2C46E2650286200F382D7 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46D2650286200F382D7 /* CardImageView.swift */; };
 		658E21D6B2AECF4180BA1AE5 /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB36663FBBA9351152F145EE /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework */; };
 		8A4C2004785012A456E3EFFC /* Pods_RxSwiftSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2F8B30F02806DD406712CB /* Pods_RxSwiftSampleApp.framework */; };
 		9AA36D280A5805B044E22F4D /* Pods_RxSwiftSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D133F72E3C8334A2925506BF /* Pods_RxSwiftSampleAppTests.framework */; };
@@ -99,6 +104,11 @@
 		5D04A1A02646C05C001386B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D04A1A22646C425001386B2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5D04A1A62646C4C2001386B2 /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
+		5D04A1A82646C74F001386B2 /* RegisterTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleLabel.swift; sourceTree = "<group>"; };
+		5D04A1AA2648FA65001386B2 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		5DE2C4692650061900F382D7 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoLabel.swift; sourceTree = "<group>"; };
+		5DE2C46D2650286200F382D7 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		7E0F565332E37D3D7CAA9A0E /* Pods-RxSwiftSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSampleApp.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftSampleApp/Pods-RxSwiftSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		BDC861BD8DFC3AB149F63DAA /* Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests/Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB36663FBBA9351152F145EE /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +242,7 @@
 				5D04A13126444E4B001386B2 /* UIImageExtension.swift */,
 				5D04A14D26468211001386B2 /* UIViewExtension.swift */,
 				5D04A1512646A041001386B2 /* UIColorExtesion.swift */,
+				5DE2C4692650061900F382D7 /* UIButton.swift */,
 			);
 			path = Extesion;
 			sourceTree = "<group>";
@@ -259,6 +270,8 @@
 				5D04A12F26444180001386B2 /* BottomControlView.swift */,
 				5D04A134264456A0001386B2 /* TopControlView.swift */,
 				5D04A14F26468B14001386B2 /* CardView.swift */,
+				5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */,
+				5DE2C46D2650286200F382D7 /* CardImageView.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -267,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				5D04A1A62646C4C2001386B2 /* RegisterTextField.swift */,
+				5D04A1A82646C74F001386B2 /* RegisterTitleLabel.swift */,
+				5D04A1AA2648FA65001386B2 /* RegisterButton.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -531,13 +546,18 @@
 			files = (
 				5D04A135264456A0001386B2 /* TopControlView.swift in Sources */,
 				5D04A1A32646C425001386B2 /* RegisterViewController.swift in Sources */,
+				5D04A1A92646C74F001386B2 /* RegisterTitleLabel.swift in Sources */,
 				5D04A102264385AE001386B2 /* HomeViewController.swift in Sources */,
 				5D04A1A72646C4C2001386B2 /* RegisterTextField.swift in Sources */,
 				5D04A0FE264385AE001386B2 /* AppDelegate.swift in Sources */,
+				5DE2C46E2650286200F382D7 /* CardImageView.swift in Sources */,
+				5D04A1AB2648FA65001386B2 /* RegisterButton.swift in Sources */,
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,
 				5D04A14E26468211001386B2 /* UIViewExtension.swift in Sources */,
 				5D04A1522646A041001386B2 /* UIColorExtesion.swift in Sources */,
 				5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */,
+				5DE2C46A2650061900F382D7 /* UIButton.swift in Sources */,
+				5DE2C46C2650072300F382D7 /* CardInfoLabel.swift in Sources */,
 				5D04A15026468B14001386B2 /* CardView.swift in Sources */,
 				5D04A13026444180001386B2 /* BottomControlView.swift in Sources */,
 			);
