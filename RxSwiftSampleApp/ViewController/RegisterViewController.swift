@@ -57,6 +57,8 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupBindins() {
+        
+        // rextFieldのbinding
         nameTextField.rx.text
             .asDriver()
             .drive { [weak self] text in
@@ -71,7 +73,7 @@ class RegisterViewController: UIViewController {
                 self?.viewModel.emailTextInput.onNext(text ?? "")
             // textの情報ハンドル
             }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
 
         passwordTextField.rx.text
             .asDriver()
@@ -85,42 +87,31 @@ class RegisterViewController: UIViewController {
             .asDriver()
             .drive { [weak self] _ in
                 //　登録時の処理
-                self?.createUserToFireAuth()
+                self?.createUser()
+            }
+            .disposed(by: disposeBag)
+        
+        // viewModelのbinding
+        viewModel.validRegisterDriver
+            .drive { validAll in
+                self.registerButton.isEnabled = validAll
+                self.registerButton.backgroundColor = validAll ? .rgb(red: 227, green: 48, blue: 78) : .init(white: 0.7, alpha: 1)
             }
             .disposed(by: disposeBag)
     }
     
-    private func createUserToFireAuth() {
-        guard let email = emailTextField.text else { return }
-        guard let passwoard = passwordTextField.text else { return }
+    private func createUser() {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        let name = nameTextField.text
         
-        Auth.auth().createUser(withEmail: email, password: passwoard) { (auth, err) in
-            if let err = err {
-                print("auth情報の保存に失敗: ", err)
-                return
+        Auth.createUserToFireAuth(email: email, password: password, name: name) { success in
+            if success {
+                print("処理が完了")
+                self.dismiss(animated: true)
+            } else {
+                
             }
-            
-            guard let uid = auth?.user.uid else { return }
-            self.setUserDataToFirestore(email: email, uid: uid)
-            print("auth情報の保存に成功: ", uid)
-        }
-    }
-    
-    private func setUserDataToFirestore(email: String, uid: String) {
-        guard let name = nameTextField.text else { return }
-        
-        let document = [
-            "name":  name,
-            "email": email,
-            "createdAt": Timestamp()
-        ] as [String : Any]
-        
-        Firestore.firestore().collection("users").document(uid).setData(document) { error in
-            if let error = error {
-                print("ユーザー情報のFirestoreへの保存に失敗: ", error)
-                return
-            }
-            print("ユーザー情報のFirestoreへの保存に成功")
         }
     }
 }
