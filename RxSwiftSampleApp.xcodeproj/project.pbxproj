@@ -36,6 +36,7 @@
 		5DE2C46E2650286200F382D7 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46D2650286200F382D7 /* CardImageView.swift */; };
 		5DE2C4712650EAB000F382D7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C4702650EAB000F382D7 /* RegisterViewModel.swift */; };
 		5DE2C4732650F6E800F382D7 /* FirebaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C4722650F6E800F382D7 /* FirebaseExtension.swift */; };
+		5DE2C4752651682200F382D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C4742651682200F382D7 /* LoginViewController.swift */; };
 		658E21D6B2AECF4180BA1AE5 /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB36663FBBA9351152F145EE /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework */; };
 		8A4C2004785012A456E3EFFC /* Pods_RxSwiftSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2F8B30F02806DD406712CB /* Pods_RxSwiftSampleApp.framework */; };
 		9AA36D280A5805B044E22F4D /* Pods_RxSwiftSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D133F72E3C8334A2925506BF /* Pods_RxSwiftSampleAppTests.framework */; };
@@ -113,6 +114,7 @@
 		5DE2C46D2650286200F382D7 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		5DE2C4702650EAB000F382D7 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		5DE2C4722650F6E800F382D7 /* FirebaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseExtension.swift; sourceTree = "<group>"; };
+		5DE2C4742651682200F382D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7E0F565332E37D3D7CAA9A0E /* Pods-RxSwiftSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSampleApp.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftSampleApp/Pods-RxSwiftSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		BDC861BD8DFC3AB149F63DAA /* Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests/Pods-RxSwiftSampleApp-RxSwiftSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB36663FBBA9351152F145EE /* Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftSampleApp_RxSwiftSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 			children = (
 				5D04A101264385AE001386B2 /* HomeViewController.swift */,
 				5D04A1A22646C425001386B2 /* RegisterViewController.swift */,
+				5DE2C4742651682200F382D7 /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				5D04A1A32646C425001386B2 /* RegisterViewController.swift in Sources */,
 				5D04A1A92646C74F001386B2 /* RegisterTitleLabel.swift in Sources */,
 				5D04A102264385AE001386B2 /* HomeViewController.swift in Sources */,
+				5DE2C4752651682200F382D7 /* LoginViewController.swift in Sources */,
 				5D04A1A72646C4C2001386B2 /* RegisterTextField.swift in Sources */,
 				5D04A0FE264385AE001386B2 /* AppDelegate.swift in Sources */,
 				5DE2C46E2650286200F382D7 /* CardImageView.swift in Sources */,
