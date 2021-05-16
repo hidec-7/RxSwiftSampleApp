@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
     
@@ -38,6 +39,8 @@ class RegisterViewController: UIViewController {
     }
     
     private func setupLayout() {
+        passwordTextField.isSecureTextEntry = true
+        
         let baseStackView = UIStackView(arrangedSubviews: [nameTextField, emailTextField, passwordTextField, registerButton])
         baseStackView.axis = .vertical
         baseStackView.distribution = .fillEqually
@@ -75,13 +78,25 @@ class RegisterViewController: UIViewController {
         
         registerButton.rx.tap
             .asDriver()
-            .drive { _ in
+            .drive { [weak self] _ in
                 //　登録時の処理
+                self?.createUserToFireAuth()
             }
             .disposed(by: disposeBag)
     }
     
     private func createUserToFireAuth() {
+        guard let email = emailTextField.text else { return }
+        guard let passwoard = passwordTextField.text else { return }
         
+        Auth.auth().createUser(withEmail: email, password: passwoard) { (auth, err) in
+            if let err = err {
+                print("auth情報の保存に失敗: ", err)
+                return
+            }
+            
+            guard let uid = auth?.user.uid else { return }
+            print("auth情報の保存に成功: ", uid)
+        }
     }
 }
