@@ -15,11 +15,12 @@ class RegisterViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = RegisterViewModel()
     
-    private let titleLabel = RegisterTitleLabel()
+    private let titleLabel = RegisterTitleLabel(text: "Tinder")
     private let nameTextField = RegisterTextField(placeHolder: "name")
     private let emailTextField = RegisterTextField(placeHolder: "email")
     private let passwordTextField = RegisterTextField(placeHolder: "password")
-    private let registerButton = RegisterButton()
+    private let registerButton = RegisterButton(text: "登録")
+    private let alreadyHaveAccountButton = UIButton(type: .system).createAboutAccountButton(text: "既にアカウントをお持ちの場合はこちら")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,12 @@ class RegisterViewController: UIViewController {
         setupGardientLayer()
         setupLayout()
         setupBindins()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func setupGardientLayer() {
@@ -50,10 +57,12 @@ class RegisterViewController: UIViewController {
         
         view.addSubview(baseStackView)
         view.addSubview(titleLabel)
+        view.addSubview(alreadyHaveAccountButton)
         
         nameTextField.anchor(height: 45)
         baseStackView.anchor(left: view.leftAnchor, right: view.rightAnchor, centerY: view.centerYAnchor, leftPadding: 45, rightPadding: 45)
         titleLabel.anchor(bottom: baseStackView.topAnchor, centerX: view.centerXAnchor, bottomPadding: 20)
+        alreadyHaveAccountButton.anchor(top: baseStackView.bottomAnchor, centerX: view.centerXAnchor, topPadding: 20)
     }
     
     private func setupBindins() {
@@ -83,11 +92,20 @@ class RegisterViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        // buttonのbindings
         registerButton.rx.tap
             .asDriver()
             .drive { [weak self] _ in
                 //　登録時の処理
                 self?.createUser()
+            }
+            .disposed(by: disposeBag)
+        
+        alreadyHaveAccountButton.rx.tap
+            .asDriver()
+            .drive { [weak self] _ in
+                let login = LoginViewController()
+                self?.navigationController?.pushViewController(login, animated: true)
             }
             .disposed(by: disposeBag)
         
