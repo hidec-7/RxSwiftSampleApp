@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class RegisterViewModel {
     
@@ -16,6 +17,7 @@ class RegisterViewModel {
     var nameTextOutput = PublishSubject<String>()
     var emailTextOutput = PublishSubject<String>()
     var passwordTextOutput = PublishSubject<String>()
+    var validRegisterSubject = BehaviorSubject<Bool>(value: false)
     
     // MARK: observer
     var nameTextInput: AnyObserver<String> {
@@ -27,26 +29,34 @@ class RegisterViewModel {
     var passwordTextInput: AnyObserver<String> {
         passwordTextOutput.asObserver()
     }
+    var validRegisterDriver: Driver<Bool> = Driver.never()
     
     init() {
-        nameTextOutput
-            .asObserver()
-            .subscribe { text in
-                print("name: ", text)
-            }
-            .disposed(by: disposeBag)
         
-        emailTextOutput
-            .asObserver()
-            .subscribe { text in
-                print("email: ", text)
-            }
-            .disposed(by: disposeBag)
+        validRegisterDriver = validRegisterSubject
+            .asDriver(onErrorDriveWith: Driver.empty())
         
-        passwordTextOutput
-            .asObserver()
-            .subscribe { text in
-                print("password: ", text)
+        let nameValid = nameTextOutput
+            .asObservable()
+            .map { text -> Bool in
+                return text.count >= 2
+            }
+        
+        let emailValid =  emailTextOutput
+            .asObservable()
+            .map { text -> Bool in
+                return text.count >= 5
+            }
+        
+        let passwordValid = passwordTextOutput
+            .asObservable()
+            .map { text -> Bool in
+                return text.count >= 6
+            }
+        
+        Observable.combineLatest(nameValid, emailValid, passwordValid) { $0 && $1 && $2 }
+            .subscribe { validAll in
+                self.validRegisterSubject.onNext(validAll)
             }
             .disposed(by: disposeBag)
     }
