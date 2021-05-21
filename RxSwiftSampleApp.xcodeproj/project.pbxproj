@@ -31,6 +31,8 @@
 		5D04A1A72646C4C2001386B2 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1A62646C4C2001386B2 /* RegisterTextField.swift */; };
 		5D04A1A92646C74F001386B2 /* RegisterTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1A82646C74F001386B2 /* RegisterTitleLabel.swift */; };
 		5D04A1AB2648FA65001386B2 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04A1AA2648FA65001386B2 /* RegisterButton.swift */; };
+		5D4947B02657D19A00771330 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4947AF2657D19A00771330 /* PKHUD.framework */; };
+		5D4947B12657D19A00771330 /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4947AF2657D19A00771330 /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DE2C46A2650061900F382D7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C4692650061900F382D7 /* UIButtonExtension.swift */; };
 		5DE2C46C2650072300F382D7 /* CardInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */; };
 		5DE2C46E2650286200F382D7 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46D2650286200F382D7 /* CardImageView.swift */; };
@@ -69,6 +71,7 @@
 				5D04A14B26446CBF001386B2 /* RxRelay.xcframework in Embed Frameworks */,
 				5D04A14726446CBF001386B2 /* RxSwift.xcframework in Embed Frameworks */,
 				5D04A14926446CBF001386B2 /* RxCocoa.xcframework in Embed Frameworks */,
+				5D4947B12657D19A00771330 /* PKHUD.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +112,7 @@
 		5D04A1A62646C4C2001386B2 /* RegisterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
 		5D04A1A82646C74F001386B2 /* RegisterTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTitleLabel.swift; sourceTree = "<group>"; };
 		5D04A1AA2648FA65001386B2 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		5D4947AF2657D19A00771330 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		5DE2C4692650061900F382D7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoLabel.swift; sourceTree = "<group>"; };
 		5DE2C46D2650286200F382D7 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D04A14A26446CBF001386B2 /* RxRelay.xcframework in Frameworks */,
+				5D4947B02657D19A00771330 /* PKHUD.framework in Frameworks */,
 				5D04A14626446CBF001386B2 /* RxSwift.xcframework in Frameworks */,
 				5D04A14826446CBF001386B2 /* RxCocoa.xcframework in Frameworks */,
 				8A4C2004785012A456E3EFFC /* Pods_RxSwiftSampleApp.framework in Frameworks */,
@@ -259,6 +264,7 @@
 		5D04A13726446240001386B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D4947AF2657D19A00771330 /* PKHUD.framework */,
 				5D04A14426446CBF001386B2 /* RxCocoa.xcframework */,
 				5D04A14526446CBF001386B2 /* RxRelay.xcframework */,
 				5D04A14326446CBF001386B2 /* RxSwift.xcframework */,
