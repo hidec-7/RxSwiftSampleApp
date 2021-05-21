@@ -37,6 +37,8 @@
 		5D4947B6265811D100771330 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947B5265811D100771330 /* ProfileViewController.swift */; };
 		5D4947B9265815B800771330 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947B8265815B800771330 /* ProfileImageView.swift */; };
 		5D4947BB2658164D00771330 /* ProfileLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947BA2658164D00771330 /* ProfileLabel.swift */; };
+		5D4947BD2658321800771330 /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947BC2658321800771330 /* ProfileTextField.swift */; };
+		5D4947C02658382E00771330 /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4947BF2658382E00771330 /* InfoCollectionViewCell.swift */; };
 		5DE2C46A2650061900F382D7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C4692650061900F382D7 /* UIButtonExtension.swift */; };
 		5DE2C46C2650072300F382D7 /* CardInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */; };
 		5DE2C46E2650286200F382D7 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE2C46D2650286200F382D7 /* CardImageView.swift */; };
@@ -121,6 +123,8 @@
 		5D4947B5265811D100771330 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5D4947B8265815B800771330 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		5D4947BA2658164D00771330 /* ProfileLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabel.swift; sourceTree = "<group>"; };
+		5D4947BC2658321800771330 /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
+		5D4947BF2658382E00771330 /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5DE2C4692650061900F382D7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		5DE2C46B2650072300F382D7 /* CardInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoLabel.swift; sourceTree = "<group>"; };
 		5DE2C46D2650286200F382D7 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 		5D04A0FC264385AE001386B2 /* RxSwiftSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				5D4947BE2658381B00771330 /* Cell */,
 				5D4947B22657D81700771330 /* Model */,
 				5D04A13326444E52001386B2 /* Extesion */,
 				5D04A12E2644412A001386B2 /* View */,
@@ -325,8 +330,17 @@
 			children = (
 				5D4947B8265815B800771330 /* ProfileImageView.swift */,
 				5D4947BA2658164D00771330 /* ProfileLabel.swift */,
+				5D4947BC2658321800771330 /* ProfileTextField.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		5D4947BE2658381B00771330 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5D4947BF2658382E00771330 /* InfoCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5DE2C46F2650EA7700F382D7 /* ViewModel */ = {
@@ -595,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4947C02658382E00771330 /* InfoCollectionViewCell.swift in Sources */,
 				5D04A135264456A0001386B2 /* TopControlView.swift in Sources */,
 				5D04A1A32646C425001386B2 /* RegisterViewController.swift in Sources */,
 				5D04A1A92646C74F001386B2 /* RegisterTitleLabel.swift in Sources */,
@@ -606,6 +621,7 @@
 				5D04A1AB2648FA65001386B2 /* RegisterButton.swift in Sources */,
 				5D04A100264385AE001386B2 /* SceneDelegate.swift in Sources */,
 				5DE2C4712650EAB000F382D7 /* RegisterViewModel.swift in Sources */,
+				5D4947BD2658321800771330 /* ProfileTextField.swift in Sources */,
 				5D04A14E26468211001386B2 /* UIViewExtension.swift in Sources */,
 				5D04A1522646A041001386B2 /* UIColorExtesion.swift in Sources */,
 				5D04A13226444E4B001386B2 /* UIImageExtension.swift in Sources */,
