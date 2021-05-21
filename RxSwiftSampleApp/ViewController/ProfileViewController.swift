@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    var user: UserModel?
     private let cellId = "cellId"
     
     //MARK: UIViews
@@ -20,10 +21,11 @@ class ProfileViewController: UIViewController {
     
     lazy var infoCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.delegate = self
         cv.dataSource = self
-        cv.backgroundColor = .brown
+        cv.backgroundColor = .white
         cv.register(InfoCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         
         return cv
@@ -39,6 +41,7 @@ class ProfileViewController: UIViewController {
     private func setupLayout() {
         nameLabel.text = "Hideto"
         
+        // Viewの配置を設定
         view.addSubview(saveButton)
         view.addSubview(logoutButton)
         view.addSubview(profileImageView)
@@ -52,6 +55,9 @@ class ProfileViewController: UIViewController {
         nameLabel.anchor(top: profileImageView.bottomAnchor, centerX: view.centerXAnchor, topPadding: 20)
         profileEditButton.anchor(top: profileImageView.topAnchor, right: profileImageView.rightAnchor, width: 60, height: 60)
         infoCollectionView.anchor(top: nameLabel.bottomAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, topPadding: 20)
+        
+        //　ユーザーの情報を反映
+        nameLabel.text = user?.name
     }
 }
 
@@ -63,21 +69,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = infoCollectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! InfoCollectionViewCell
+        cell.user = self.user
         
         return cell
-    }
-}
-
-// TODO: 後で別のファイルにする
-class InfoCollectionViewCell: UICollectionViewCell {
-    
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        
-        backgroundColor = .green
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
