@@ -16,7 +16,7 @@ class TopControlView: UIView {
     let tinderButton = createTopButton(imageName: "tinder", unselectedImage: "tinder-un")
     let goodButton = createTopButton(imageName: "good", unselectedImage: "good-un")
     let commentButton = createTopButton(imageName: "comment", unselectedImage: "comment-un")
-    let peopleButton = createTopButton(imageName: "people", unselectedImage: "people-un")
+    let profileButton = createTopButton(imageName: "people", unselectedImage: "people-un")
     
     static private func createTopButton(imageName: String, unselectedImage: String) -> UIButton {
         let button = UIButton(type: .custom)
@@ -36,7 +36,7 @@ class TopControlView: UIView {
     }
     
     private func setupLayout() {
-        let baseStackView = UIStackView(arrangedSubviews: [tinderButton, goodButton, commentButton, peopleButton])
+        let baseStackView = UIStackView(arrangedSubviews: [tinderButton, goodButton, commentButton, profileButton])
         baseStackView.axis = .horizontal
         baseStackView.distribution = .fillEqually
         baseStackView.spacing = 43
@@ -71,16 +71,16 @@ class TopControlView: UIView {
                 self.handleSelectedButton(selectedButton: self.commentButton)
             }).disposed(by: disposeBag)
         
-        peopleButton.rx.tap
+        profileButton.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.handleSelectedButton(selectedButton: self.peopleButton)
+                self.handleSelectedButton(selectedButton: self.profileButton)
             }).disposed(by: disposeBag)
     }
     
     private func handleSelectedButton(selectedButton: UIButton) {
-        let buttons = [tinderButton, goodButton, commentButton, peopleButton]
+        let buttons = [tinderButton, goodButton, commentButton, profileButton]
         
         buttons.forEach { button in
             if button == selectedButton {
