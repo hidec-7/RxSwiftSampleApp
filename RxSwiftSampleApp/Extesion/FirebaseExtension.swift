@@ -74,4 +74,20 @@ extension Firestore {
             completion(user)
         }
     }
+    
+    // Firestoreから自分以外のユーザー情報を取得
+    static func fetchUsersFromFirestore(completion: @escaping ([UserModel]) -> Void) {
+        Firestore.firestore().collection("users").getDocuments { (snapshots, err) in
+            if let err = err {
+                print("ユーザー情報の取得に失敗: ", err)
+                return
+            }
+            let users = snapshots?.documents.map({ (snapshot) -> UserModel in
+                let dic = snapshot.data()
+                let user = UserModel.init(dic: dic)
+                return user
+            })
+            completion(users ?? [UserModel]())
+        }
+    }
 }
