@@ -17,13 +17,7 @@ class UserModel {
     var residence: String
     var hobby: String
     var introdunction: String
-    
-//    "name": self?.name,
-//    "age": self?.age,
-//    "email": self?.email,
-//    "residence": self?.residence,
-//    "hobby": self?.hobby,
-//    "introduction": self?.introduction
+    var profileImageUrl: String
     
     init(dic: [String: Any]) {
         self.email = dic["email"] as? String ?? ""
@@ -33,5 +27,6 @@ class UserModel {
         self.residence = dic["residence"] as? String ?? ""
         self.hobby = dic["hobby"] as? String ?? ""
         self.introdunction = dic["introduction"] as? String ?? ""
+        self.profileImageUrl = dic["profileImageUrl"] as? String ?? ""
     }
 }

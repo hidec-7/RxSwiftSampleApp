@@ -9,9 +9,12 @@ import UIKit
 import RxSwift
 import FirebaseFirestore
 import FirebaseStorage
+import SDWebImage
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
     
+    // MARK: Properties
     private let disposeBag = DisposeBag()
     
     var user: UserModel?
@@ -53,6 +56,7 @@ class ProfileViewController: UIViewController {
         setupBindings()
     }
     
+    // レイアウトの設定
     private func setupBindings() {
         saveButton.rx.tap
             .asDriver()
@@ -90,10 +94,22 @@ class ProfileViewController: UIViewController {
                 self?.present(pickerView, animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
+        
+        logoutButton.rx.tap
+            .asDriver()
+            .drive { [weak self] _ in
+                self?.logout()
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setupLayout() {
+        view.backgroundColor = .white
+        
         nameLabel.text = "Hideto"
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.layer.cornerRadius = 90
+        profileImageView.layer.masksToBounds = true
         
         // Viewの配置を設定
         view.addSubview(saveButton)
@@ -112,6 +128,27 @@ class ProfileViewController: UIViewController {
         
         //　ユーザーの情報を反映
         nameLabel.text = user?.name
+        if let url = URL(string: user?.profileImageUrl ?? "") {
+            profileImageView.sd_setImage(with: url)
+        }
+    }
+    
+    private func logout() {
+        do {
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+        } catch {
+            print("ログアウトに失敗: ", error)
+        }
+    }
+    
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        guard let presentationController = presentationController else {
+            return
+        }
+        
+        presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
     }
 }
 
@@ -123,10 +160,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         if let image = info[.originalImage] as? UIImage {
             profileImageView.image = image.withRenderingMode(.alwaysOriginal)
         }
-        
-        profileImageView.contentMode = .scaleAspectFill
-        profileImageView.layer.cornerRadius = 90
-        profileImageView.layer.masksToBounds = true
         
         hasChangedImage = true
         

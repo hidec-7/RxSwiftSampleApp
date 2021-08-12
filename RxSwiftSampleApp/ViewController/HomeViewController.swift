@@ -21,13 +21,6 @@ class HomeViewController: UIViewController {
     let topControlView = TopControlView()
     let cardView = UIView()
     let BottomView = BottomControlView()
-    
-    let logoutButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("ログアウト", for: .normal)
-        
-        return button
-    }()
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -86,7 +79,6 @@ class HomeViewController: UIViewController {
         stackView.axis = .vertical
         
         self.view.addSubview(stackView)
-        self.view.addSubview(logoutButton)
         
         [topControlView.heightAnchor.constraint(equalToConstant: 100),
          BottomView.heightAnchor.constraint(equalToConstant: 120),
@@ -97,21 +89,6 @@ class HomeViewController: UIViewController {
          stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ].forEach{ $0 .isActive = true }
         
-        logoutButton.anchor(bottom: view.bottomAnchor, left: view.leftAnchor, bottomPadding: 10, leftPadding: 10)
-        
-        logoutButton.addTarget(self, action: #selector(tappedLogoutButton), for: .touchUpInside)
-    }
-    
-    @objc private func tappedLogoutButton() {
-        do {
-            try Auth.auth().signOut()
-            let registerController = RegisterViewController()
-            let nav = UINavigationController(rootViewController: registerController)
-            nav.modalPresentationStyle  = .fullScreen
-            self.present(nav, animated: true)
-        } catch {
-            print("ログアウトに失敗: ", error)
-        }
     }
     
     private func setupBindings() {
@@ -120,9 +97,27 @@ class HomeViewController: UIViewController {
             .drive { [weak self] _ in
                 let profile = ProfileViewController()
                 profile.user = self?.userModel
+                profile.presentationController?.delegate = self
                 self?.present(profile, animated: true, completion: nil)
             }
             .disposed(by: disposeBag)
     }
 }
 
+// MARK: - UIAdaptivePresentationControllerDelegate
+extension HomeViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        
+        if Auth.auth().currentUser == nil {
+            self.userModel = nil
+            self.users = []
+            
+            let registerController = RegisterViewController()
+            let nav = UINavigationController(rootViewController: registerController)
+            nav.modalPresentationStyle  = .fullScreen
+            self.present(nav, animated: true)
+        }
+        print("presentationControllerDidDismiss")
+    }
+}
