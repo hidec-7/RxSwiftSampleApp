@@ -48,7 +48,8 @@ extension Firestore {
         let document = [
             "name":  name,
             "email": email,
-            "createdAt": Timestamp()
+            "createdAt": Timestamp(),
+            "uid": uid
         ] as [String : Any]
         
         Firestore.firestore().collection("users").document(uid).setData(document) { error in
@@ -88,7 +89,10 @@ extension Firestore {
                 let user = UserModel.init(dic: dic)
                 return user
             })
-            completion(users ?? [UserModel]())
+            let filteredUsers = users?.filter({ (user) -> Bool in
+                return user.uid != Auth.auth().currentUser?.uid
+            })
+            completion(filteredUsers ?? [UserModel]())
         }
     }
     
