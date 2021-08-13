@@ -15,12 +15,15 @@ import RxSwift
 class HomeViewController: UIViewController {
     
     private var userModel: UserModel?
+    private var isCardAnimating = false
+    
+    // 自分以外のユーザー情報
     private var users = [UserModel]()
     private let disposeBag = DisposeBag()
     
     let topControlView = TopControlView()
     let cardView = UIView()
-    let BottomView = BottomControlView()
+    let bottomControllView = BottomControlView()
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -58,6 +61,8 @@ class HomeViewController: UIViewController {
     
     private func fetchUsers() {
         HUD.show(.progress)
+        
+        self.users = []
         Firestore.fetchUsersFromFirestore { (users) in
             HUD.hide()
             self.users = users
@@ -74,14 +79,14 @@ class HomeViewController: UIViewController {
     private func setupLayout() {
         view.backgroundColor = .white
         
-        let stackView = UIStackView(arrangedSubviews: [topControlView, cardView, BottomView])
+        let stackView = UIStackView(arrangedSubviews: [topControlView, cardView, bottomControllView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         
         self.view.addSubview(stackView)
         
         [topControlView.heightAnchor.constraint(equalToConstant: 100),
-         BottomView.heightAnchor.constraint(equalToConstant: 120),
+         bottomControllView.heightAnchor.constraint(equalToConstant: 120),
          
          stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -99,6 +104,41 @@ class HomeViewController: UIViewController {
                 profile.user = self?.userModel
                 profile.presentationController?.delegate = self
                 self?.present(profile, animated: true, completion: nil)
+            }
+            .disposed(by: disposeBag)
+        
+        bottomControllView.ballView.button?.rx.tap
+            .asDriver()
+            .drive { [weak self] _ in
+                self?.fetchUsers()
+            }
+            .disposed(by: disposeBag)
+        
+        bottomControllView.dribbleView.button?.rx.tap
+            .asDriver()
+            .drive { [weak self] _ in
+                guard let self = self else { return }
+                
+                if !self.isCardAnimating {
+                    self.isCardAnimating = true
+                    self.cardView.subviews.last?.removeCardViewAnimation(x: -600, completion: {
+                        self.isCardAnimating = false
+                    })
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        bottomControllView.shoesView.button?.rx.tap
+            .asDriver()
+            .drive { [weak self] _ in
+                guard let self = self else { return }
+                
+                if !self.isCardAnimating {
+                    self.isCardAnimating = true
+                    self.cardView.subviews.last?.removeCardViewAnimation(x: 600, completion: {
+                        self.isCardAnimating = false
+                    })
+                }
             }
             .disposed(by: disposeBag)
     }
